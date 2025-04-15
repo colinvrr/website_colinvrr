@@ -1,0 +1,13 @@
+{
+  "name": "website_colinvrr",
+  "version": "1.0.0",
+  "description": "Portfolio website of Colin VERRIERE",
+  "scripts": {
+    "start": "live-server"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "author": "Colin VERRIERE",
+  "license": "MIT"
+}
