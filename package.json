@@ -12,5 +12,8 @@
     "braces": "^3.0.3"
   },
   "author": "Colin VERRIERE",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "lucide": "^0.503.0"
+  }
 }
