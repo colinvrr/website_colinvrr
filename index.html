@@ -3,211 +3,474 @@
 
 <head>
   <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Colin Verriere - Portfolio Website" />
   <meta name="author" content="Colin VERRIERE" />
-  <meta name="keywords" content="Colin VERRIERE, Software Engineer, Web Developer, Test Analyst, ESME Sudria, Bouygues Telecom" />
+  <meta name="keywords"
+    content="Colin VERRIERE, Software Engineer, Web Developer, Test Analyst, ESME Sudria, Bouygues Telecom" />
   <link rel="shortcut icon" href="./assets/img/fav.ico" />
   <title>Colin VERRIERE | Software Engineer</title>
   <link rel="stylesheet" href="./assets/css/main.css" />
   <script src="main.js" defer></script>
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #181818;
+      --text-color: #f0f0f0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      transition: background-color 0.3s;
+    }
+
+    [data-theme="dark"] .topbar {
+      background-color: rgba(24, 24, 24, 0.8);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: bold;
+      padding: 0.5em 1.25em;
+      border-radius: 9999px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background-color: rgba(0, 0, 0, 0.1);
+      color: black;
+    }
+
+    [data-theme="dark"] .nav-links a:hover,
+    [data-theme="dark"] .nav-links a.active {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    .theme-toggle {
+      position: relative;
+    }
+
+    .theme-toggle button {
+      background: #333;
+      border: none;
+      color: white;
+      border-radius: 50%;
+      padding: 0.5em;
+      cursor: pointer;
+    }
+
+    .theme-dropdown {
+      position: absolute;
+      right: 0;
+      top: 100%;
+      margin-top: 0.5em;
+      background-color: var(--bg-color);
+      border-radius: 0.5em;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      display: none;
+    }
+
+    .theme-dropdown div {
+      padding: 0.75em 1em;
+      cursor: pointer;
+    }
+
+    .theme-dropdown div:hover {
+      background-color: rgba(12, 207, 142, 0.786);
+    }
+
+    .blinking-cursor {
+  font-weight: bold;
+  font-size: 1.25em;
+  color: var(--text-color);
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+  </style>
 </head>
 
 <body>
-  <div id="particles-js">
-    <header class="header">
-      <h1>
-        <span class="site-title">Colin VERRIERE</span>
-        <span class="site-description">Software Engineer • Web Developer • Test Analyst</span>
-      </h1>
-      <div class="header-icons">
-        <a aria-label="LinkedIn" href="https://www.linkedin.com/in/colinverriere/" target="_blank"><i class="icon fa fa-linkedin"></i></a>
-        <a aria-label="GitHub" href="https://github.com/colinvrr" target="_blank"><i class="icon fa fa-github-alt"></i></a>
-        <a aria-label="Resume" href="./pdf/CV_Colin_VERRIERE_English.pdf" target="_blank"><i class="icon fa fa-file-pdf-o"></i></a>
-        <a aria-label="Email" href="mailto:colin.verriere@gmx.fr" target="_blank"><i class="icon fa fa-envelope"></i></a>
+  <div class="topbar">
+    <img src="./assets/img/jpg/Professional-Picture.jpg" class="profile-pic" alt="Colin" style="height: 40px; border-radius: 50%;" />
+    <nav class="nav-links">
+      <a href="#" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+    </nav>
+    <div class="theme-toggle">
+      <button onclick="toggleDropdown()">🌙</button>
+      <div id="themeDropdown" class="theme-dropdown">
+        <div onclick="setTheme('auto')">Automatic</div>
+        <div onclick="setTheme('light')">Light</div>
+        <div onclick="setTheme('dark')">Dark</div>
       </div>
-      <nav class="header-links">
-        <a class="link" href="#about">About</a>
-        <a class="link" href="#projects">Projects</a>
-      </nav>
-    </header>
-    <a class="down" href="#about"><i class="icon fa fa-chevron-down"></i></a>
+    </div>
   </div>
 
-  <section id="about">
-    <div class="user-details">
-      <h1><span class="txt-type" data-wait="3000" data-words='["About Me"]'></span>|</h1>
-      <picture>
-        <source type="image/webp" srcset="./assets/img/webp/Professional-Picture.webp" alt="Professional photo" width="20%" style="border-radius: 50%" />
-        <img src="./assets/img/jpg/Professional-Picture.jpg" alt="Professional photo" width="20%" style="border-radius: 50%" />
-      </picture>
-
-      <div class="photo-gallery">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="./assets/img/photos/IMG_course.png" alt="Colin Front" />
-            </div>
-            <div class="flip-card-back">
-              <img src="./assets/img/photos/photopaper.png" alt="Colin Back" />
-              <div class="date-stamp">
-                RUNNING.JPG<br>
-                2021-05-20
-              </div>
-            </div>
-          </div>
+  <body>
+    <div id="particles-js">
+      <header class="header">
+        <h1>
+          <span class="site-title">Colin VERRIERE</span>
+          <span class="site-description">Software Engineer • Web Developer • Test Analyst</span>
+        </h1>
+        <div class="header-icons">
+          <a aria-label="LinkedIn" href="https://www.linkedin.com/in/colinverriere/" target="_blank"><i
+              class="icon fa fa-linkedin"></i></a>
+          <a aria-label="GitHub" href="https://github.com/colinvrr" target="_blank"><i
+              class="icon fa fa-github-alt"></i></a>
+          <a aria-label="Resume" href="./pdf/CV_Colin_VERRIERE_English.pdf" target="_blank"><i
+              class="icon fa fa-file-pdf-o"></i></a>
+          <a aria-label="Email" href="mailto:colin.verriere@gmx.fr" target="_blank"><i
+              class="icon fa fa-envelope"></i></a>
         </div>
-
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="./assets/img/photos/IMG_pro.jpg" alt="Colin Front" />
-            </div>
-            <div class="flip-card-back">
-              <img src="./assets/img/photos/photopaper.png" alt="Colin Back" />
-              <div class="date-stamp">
-                RUNNING.JPG<br>
-                2025-03-31
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="./assets/img/photos/IMG_stay.jpg" alt="Colin Front" />
-            </div>
-            <div class="flip-card-back">
-              <img src="./assets/img/photos/photopaper.png" alt="Colin Back" />
-              <div class="date-stamp">
-                STAY&FLY.JPG<br>
-                2025-04-02
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="./assets/img/photos/IMG_ski.jpg" alt="Colin Front" />
-            </div>
-            <div class="flip-card-back">
-              <img src="./assets/img/photos/photopaper.png" alt="Colin Back" />
-              <div class="date-stamp">
-                SKI.JPG<br>
-                2025-02-13
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <p style="text-align: justify">
-        I'm a recent graduate from <strong>ESME Sudria – Engineering School, Paris</strong>, where I specialized in <strong>Information Systems Management</strong>.
-        Over the past three years, I gained solid experience as an <strong>apprentice QA Analyst</strong> at <strong>Bouygues Telecom</strong>, contributing to test automation, validation processes, and quality assurance in an enterprise environment.
-        <br><br>
-        My responsibilities included defining test strategies, developing automated test cases with <strong>Robot Framework</strong>, and collaborating with developers to track and resolve issues, all within <strong>Agile/Scrum</strong> teams using tools like <strong>JIRA</strong> and <strong>Xray</strong>.
-        <br><br>
-        In parallel, I explored <strong>fullstack development</strong> through academic and side projects. I was the lead frontend developer on <strong>Stay&Fly</strong>, an award-winning travel management platform (2nd place at ESME), where I implemented a complete React-based UI, API integrations (Amadeus, Ticketmaster), and smart contract features via Web3.js.
-        <br><br>
-        I am now actively seeking a <strong>full-time position (CDI)</strong> as a <strong>Fullstack Developer</strong> or <strong>Software Engineer</strong>. I'm eager to join a collaborative team where I can bring value to impactful web applications or information systems while continuing to grow technically and professionally.
-      </p>
+        <nav class="header-links">
+          <a class="link" href="#about">About</a>
+          <a class="link" href="#projects">Projects</a>
+        </nav>
+      </header>
+      <a class="down" href="#about"><i class="icon fa fa-chevron-down"></i></a>
     </div>
 
-    <div class="tech-grid">
-      <div class="tech-card">
-        <h2>Languages</h2>
-        <i class="devicon-python-plain colored"></i>
-        <i class="devicon-java-plain-wordmark colored"></i>
-        <i class="devicon-cplusplus-plain colored"></i>
-        <i class="devicon-typescript-plain colored"></i>
-        <p>
-          Languages I use for backend development, scripting, and test automation in real-world environments. These include strong-typed languages like Java and TypeScript, interpreted languages like Python for automation, and low-level languages like C++ from my engineering background.
-        </p>
-      </div>
-    
-      <div class="tech-card">
-        <h2>Front-End</h2>
-        <i class="devicon-react-original-wordmark colored"></i>
-        <i class="devicon-bootstrap-plain-wordmark colored"></i>
-        <i class="devicon-html5-plain-wordmark colored"></i>
-        <i class="devicon-css3-plain-wordmark colored"></i>
-        <p>
-          Modern frontend frameworks and styling systems that I use to create responsive, dynamic, and user-friendly interfaces. My stack includes component-based frameworks like React, layout systems like Bootstrap, and web standards like HTML5 and CSS3.
-        </p>
-      </div>
-    
-      <div class="tech-card">
-        <h2>Back-End</h2>
-        <i class="devicon-java-plain-wordmark colored"></i>
-        <i class="devicon-php-plain colored"></i>
-        <i class="devicon-javascript-plain colored"></i>
-        <i class="devicon-postgresql-plain-wordmark colored"></i>
-        <p>
-          Server-side languages and database systems used to build scalable, secure, and maintainable APIs and application logic. I work with technologies like Java, PHP, JavaScript (Node.js), and PostgreSQL to power backend services in both professional and academic projects.
-        </p>
-      </div>
-    
-      <div class="tech-card">
-        <h2>Tools</h2>
-        <i class="devicon-git-plain-wordmark colored"></i>
-        <i class="devicon-github-plain-wordmark colored"></i>
-        <i class="devicon-vscode-plain colored"></i>
-        <i class="devicon-docker-plain-wordmark colored"></i>
-        <p>
-          Tools I rely on for version control, team collaboration, and development workflow automation. My daily toolkit includes Git/GitHub for code tracking, Docker for containerization, and VS Code for efficient coding across multiple stacks.
-        </p>
-      </div>
-    </div>
-  </section>
+    <section id="about">
+      <div class="user-details">
+        <h1>
+          <span class="txt-type" data-wait="3000" data-words='["About Me"]'></span>
+          <span class="blinking-cursor">|</span>
+        </h1>
+        <picture>
+          <source type="image/webp" srcset="./assets/img/webp/Professional-Picture.webp" alt="Professional photo"
+            width="20%" style="border-radius: 50%" />
+          <img src="./assets/img/jpg/Professional-Picture.jpg" alt="Professional photo" width="20%"
+            style="border-radius: 50%" />
+        </picture>
 
-  <section id="projects" class="modern-projects">
-    <div class="section-title">
-      <h1 class="glow">🚀 Projects</h1>
-      <p>Cutting-edge apps and systems I've recently crafted.</p>
-    </div>
-    <div class="projects-grid">
-  
-      <div class="project-card futuristic">
-        <div class="project-image">
-          <img src="./assets/img/png/stay.png" alt="Stay&Fly project">
+        <div class="photo-gallery">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="./assets/img/photos/IMG_course.png" alt="Colin Front" />
+              </div>
+              <div class="flip-card-back">
+                <img src="./assets/img/photos/photopaper.png" alt="Colin Back" />
+                <div class="date-stamp">
+                  RUNNING.JPG<br>
+                  2025-03-31
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="./assets/img/photos/IMG_pro.jpg" alt="Colin Front" />
+              </div>
+              <div class="flip-card-back">
+                <img src="./assets/img/photos/photopaper.png" alt="Colin Back" />
+                <div class="date-stamp">
+                  BARCELONA.JPG<br>
+                  2024-08-24
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="./assets/img/photos/IMG_stay.jpg" alt="Colin Front" />
+              </div>
+              <div class="flip-card-back">
+                <img src="./assets/img/photos/photopaper.png" alt="Colin Back" />
+                <div class="date-stamp">
+                  STAY&FLY.JPG<br>
+                  2025-04-02
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="./assets/img/photos/IMG_ski.jpg" alt="Colin Front" />
+              </div>
+              <div class="flip-card-back">
+                <img src="./assets/img/photos/photopaper.png" alt="Colin Back" />
+                <div class="date-stamp">
+                  DOWNHILL_SKIING.JPG<br>
+                  2025-02-13
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="project-content">
-          <h3 class="project-title">Stay&Fly <span class="badge glow">Award-Winning</span></h3>
+
+        <p class="about-text">
+          I'm a recent graduate from <strong>ESME Sudria – Engineering School, Paris</strong>, where I specialized in
+          <strong>Information Systems Management</strong>.
+          Over the past three years, I gained solid experience as an <strong>apprentice QA Analyst</strong> at
+          <strong>Bouygues Telecom</strong>, contributing to test automation, validation processes, and quality
+          assurance in an enterprise environment.
+          <br><br>
+          My responsibilities included defining test strategies, developing automated test cases with <strong>Robot
+            Framework</strong>, and collaborating with developers to track and resolve issues, all within
+          <strong>Agile/Scrum</strong> teams using tools like <strong>JIRA</strong> and <strong>Xray</strong>.
+          <br><br>
+          In parallel, I explored <strong>fullstack development</strong> through academic and side projects. I was the
+          lead frontend developer on <strong>Stay&Fly</strong>, an award-winning travel management platform (2nd place
+          at ESME), where I implemented a complete React-based UI, API integrations (Amadeus, Ticketmaster), and smart
+          contract features via Web3.js.
+          <br><br>
+          I am now actively seeking a <strong>full-time position (CDI)</strong> as a <strong>Fullstack
+            Developer</strong> or <strong>Software Engineer</strong>. I'm eager to join a collaborative team where I can
+          bring value to impactful web applications or information systems while continuing to grow technically and
+          professionally.
+        </p>
+      </div>
+      <div class="floating-blobs">
+        <div class="blob blob1"></div>
+        <div class="blob blob2"></div>
+      </div>
+
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h2 class="card-title">Languages</h2>
+          <div class="icon-row">
+            <img src="https://cdn.simpleicons.org/python/3776AB" alt="Python" style="height: 40px; margin: 0 10px;" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" style="height: 40px; margin: 0 10px;" />
+            <img src="https://cdn.simpleicons.org/cplusplus/00599C" alt="C++" style="height: 40px; margin: 0 10px;" />
+            <img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript" style="height: 40px; margin: 0 10px;" />
+          </div>
           <p>
-            A next-gen travel ecosystem. Book, resell, and negotiate your trips using Web3 smart contracts, Amadeus APIs, and live events via Ticketmaster.
+            Languages I use for backend development, scripting, and test automation in real-world environments. These
+            include strong-typed languages like Java and TypeScript, interpreted languages like Python for automation,
+            and low-level languages like C++ from my engineering background.
           </p>
-          <a href="https://github.com/colinvrr/stayandfly" target="_blank" class="modern-btn">🔗 View on GitHub</a>
         </div>
-      </div>
-  
-      <div class="project-card futuristic">
-        <div class="project-image">
-          <img src="./assets/img/png/prems.png" alt="Prem's project">
-        </div>
-        <div class="project-content">
-          <h3 class="project-title">Prem's <span class="badge lock">🔒</span></h3>
+      
+        <div class="tech-card">
+          <h2 class="card-title">Front-End</h2>
+          <div class="icon-row">
+            <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React" style="height: 40px; margin: 0 10px;" />
+            <img src="https://cdn.simpleicons.org/bootstrap/7952B3" alt="Bootstrap" style="height: 40px; margin: 0 10px;" />
+            <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" style="height: 40px; margin: 0 10px;" />
+            <img src="https://cdn.simpleicons.org/css3/1572B6" alt="CSS3" style="height: 40px; margin: 0 10px;" />
+          </div>
           <p>
-            Intelligent test automation framework built at Bouygues Telecom. Robot Framework + CI pipelines for smart regression and API contract validation.
+            Modern frontend frameworks and styling systems that I use to create responsive, dynamic, and user-friendly
+            interfaces. My stack includes component-based frameworks like React, layout systems like Bootstrap, and web
+            standards like HTML5 and CSS3.
           </p>
-          <a href="#" class="modern-btn disabled" aria-disabled="true">Private Project</a>
+        </div>
+      
+        <div class="tech-card">
+          <h2 class="card-title">Back-End</h2>
+          <div class="icon-row">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" style="height: 40px; margin: 0 10px;" />
+            <img src="https://cdn.simpleicons.org/php/777BB4" alt="PHP" style="height: 40px; margin: 0 10px;" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" alt="JavaScript" style="height: 40px; margin: 0 10px;"/>
+            <img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL" style="height: 40px; margin: 0 10px;" />
+          </div>
+          <p>
+            Server-side languages and database systems used to build scalable, secure, and maintainable APIs and
+            application logic. I work with technologies like Java, PHP, JavaScript (Node.js), and PostgreSQL to power
+            backend services in both professional and academic projects.
+          </p>
+        </div>
+      
+        <div class="tech-card">
+          <h2 class="card-title">Tools</h2>
+          <div class="icon-row">
+            <img src="https://cdn.simpleicons.org/git/F05032" alt="Git" style="height: 40px; margin: 0 10px;" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" alt="github" style="height: 40px; margin: 0 10px;"/>
+            <img src="https://cdn.simpleicons.org/postman/FF6C37" alt="Postman" style="height: 40px; margin: 0 10px;" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" alt="VS Code" style="height: 40px; margin: 0 10px;" />
+          </div>
+          <p>
+            Tools I rely on for version control, team collaboration, API testing, and development workflow automation. 
+            My daily toolkit includes Git/GitHub for code tracking, Docker for containerization, Postman for API development and testing, 
+            and VS Code for efficient coding across multiple stacks.
+          </p>
         </div>
       </div>
+    </section>
+
+    <section id="projects" class="terminal-projects">
+      <div class="terminal-wrapper">
+        <div class="terminal-topbar">
+          <div class="traffic-buttons">
+            <span class="btn red"></span>
+            <span class="btn yellow"></span>
+            <span class="btn green"></span>
+          </div>
+          <div class="terminal-title">colinverriere — colinverriere@MacBook-Colin — ~ — -zsh — 80×24</div>
+        </div>
+      <div class="terminal-header animated-terminal">
+        <span class="prompt">colin@verriere</span>:<span class="path">~/projects</span>$ <span id="typed-text"></span><span class="cursor">█</span>
+      </div>
+    
+      <div class="terminal-body">
+        <div class="terminal-line">
+          <span class="cmd">Stay&Fly</span>
+          <div class="details">
+            ↳ Web3 travel platform — <em>React, Web3.js, Amadeus, Ticketmaster</em><br>
+            ↳ <a href="https://github.com/nathan-verdeyme/HotelPFE" target="_blank">🔗 View on GitHub</a>
+            ↳ <a href="./projet.html" target="_blank">More Détails</a>
+          </div>
+        </div>
+    
+        <div class="terminal-line">
+          <span class="cmd">Prems</span>
+          <div class="details">
+            ↳ En cours de dev</em><br>
+            ↳ 🔒 Private project
+          </div>
+        </div>
+
+        <div class="terminal-line">
+          <span class="cmd">ESMECONNECT</span>
+          <div class="details">
+            ↳ En cours de dev</em><br>
+            ↳ 🔒 Private project
+          </div>
+        </div>
+    
+        <!-- Ajoute d'autres projets ici -->
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; Colin VERRIERE, 2024</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="./assets/js/sweet-scroll.min.js"></script>
+    <script src="./assets/js/google-analytics.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script>
+      function toggleDropdown() {
+        const dropdown = document.getElementById("themeDropdown");
+        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+      }
   
-    </div>
-  </section>
+      function setTheme(mode) {
+        localStorage.setItem("theme", mode);
+        applyTheme();
+      }
+  
+      function applyTheme() {
+        const mode = localStorage.getItem("theme") || "auto";
+        if (mode === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        } else if (mode === "light") {
+          document.documentElement.setAttribute("data-theme", "light");
+        } else {
+          const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+        }
+      }
+  
+      const links = document.querySelectorAll('.nav-links a');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          links.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        });
+      });
+  
+      applyTheme();
+    </script>
 
-  <footer class="footer">
-    <p>&copy; Colin VERRIERE, 2024</p>
-  </footer>
+<script>
+  const text = "ls -la";
+  const typedText = document.getElementById("typed-text");
+  let index = 0;
 
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script src="./assets/js/sweet-scroll.min.js"></script>
-  <script src="./assets/js/google-analytics.js"></script>
-  <script src="./assets/js/main.js"></script>
-</body>
+  function type() {
+    if (index < text.length) {
+      typedText.textContent += text.charAt(index);
+      index++;
+      setTimeout(type, 100); // Vitesse de frappe
+    }
+  }
 
-</html>
+  document.addEventListener("DOMContentLoaded", type);
+</script>
+<script>
+  const dropdown = document.getElementById("themeDropdown");
+  const toggleBtn = document.querySelector(".theme-toggle button");
+
+  function toggleDropdown() {
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+  }
+
+  function closeDropdownOnClickOutside(event) {
+    if (!dropdown.contains(event.target) && !toggleBtn.contains(event.target)) {
+      dropdown.style.display = "none";
+    }
+  }
+
+  function setTheme(mode) {
+    localStorage.setItem("theme", mode);
+    applyTheme();
+    dropdown.style.display = "none"; // Ferme après sélection
+  }
+
+  function applyTheme() {
+    const mode = localStorage.getItem("theme") || "auto";
+    if (mode === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else if (mode === "light") {
+      document.documentElement.setAttribute("data-theme", "light");
+    } else {
+      const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    applyTheme();
+    document.addEventListener("click", closeDropdownOnClickOutside);
+  });
+</script>
+
+  </body>
+  
+  </html>
