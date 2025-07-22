@@ -4,192 +4,63 @@
 <head>
   <meta charset="utf-8" />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Colin Verriere - Portfolio Website" />
-  <meta name="author" content="Colin VERRIERE" />
-  <meta name="keywords"
-    content="Colin VERRIERE, Software Engineer, Web Developer, Test Analyst, ESME Sudria, Bouygues Telecom" />
-  <link rel="shortcut icon" href="./assets/img/fav.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Colin VERRIERE | Software Engineer</title>
+  <link rel="shortcut icon" href="./assets/img/fav.ico" />
   <link rel="stylesheet" href="./assets/css/main.css" />
-  <script src="main.js" defer></script>
-  <style>
-    :root {
-      --bg-color: #ffffff;
-      --text-color: #000000;
-    }
-
-    [data-theme="dark"] {
-      --bg-color: #181818;
-      --text-color: #f0f0f0;
-    }
-
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-      background-color: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(10px);
-      transition: background-color 0.3s;
-    }
-
-    [data-theme="dark"] .topbar {
-      background-color: rgba(24, 24, 24, 0.8);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-color);
-      font-weight: bold;
-      padding: 0.5em 1.25em;
-      border-radius: 9999px;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      background-color: rgba(0, 0, 0, 0.1);
-      color: black;
-    }
-
-    [data-theme="dark"] .nav-links a:hover,
-    [data-theme="dark"] .nav-links a.active {
-      background-color: rgba(255, 255, 255, 0.1);
-      color: white;
-    }
-
-    .theme-toggle {
-      position: relative;
-    }
-
-    .theme-toggle button {
-      background: #333;
-      border: none;
-      color: white;
-      border-radius: 50%;
-      padding: 0.5em;
-      cursor: pointer;
-    }
-
-    .theme-dropdown {
-      position: absolute;
-      right: 0;
-      top: 100%;
-      margin-top: 0.5em;
-      background-color: var(--bg-color);
-      border-radius: 0.5em;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      display: none;
-    }
-
-    .theme-dropdown div {
-      padding: 0.75em 1em;
-      cursor: pointer;
-    }
-
-    .theme-dropdown div:hover {
-      background-color: rgba(255, 255, 255, 0.076);
-    }
-
-    .blinking-cursor {
-      font-weight: bold;
-      font-size: 1.25em;
-      color: var(--text-color);
-      animation: blink 1s step-start infinite;
-    }
-
-    @keyframes blink {
-      50% {
-        opacity: 0;
-      }
-    }
-  </style>
 </head>
 
 <body>
-  <div class="topbar">
-    <img src="./assets/img/jpg/Professional-Picture.jpg" class="profile-pic" alt="Colin"
-      style="height: 40px; border-radius: 50%;" />
-    <nav class="nav-links">
-      <a href="#" class="active">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-    </nav>
-    <div class="theme-toggle">
-      <button onclick="toggleDropdown()">🌙</button>
-      <div id="themeDropdown" class="theme-dropdown">
-        <div onclick="setTheme('auto')">Automatic</div>
-        <div onclick="setTheme('light')">Light</div>
-        <div onclick="setTheme('dark')">Dark</div>
-      </div>
-    </div>
-  </div>
+  <!-- HEADER & PARTICLES -->
+  <div id="particles-js">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
 
-  <body>
-    <div id="particles-js">
-      <header class="header">
-        <h1>
-          <span class="site-title">Colin VERRIERE</span>
-          <span class="site-description">Software Engineer • Web Developer • Test Analyst</span>
-        </h1>
-        <div class="header-icons">
-          <a aria-label="GitHub" href="https://github.com/colinvrr" target="_blank">
-            <img src="https://cdn.simpleicons.org/github/white" alt="GitHub" style="height: 24px; margin: 0 10px;" />
-          </a>
-          
-          <a href="https://www.linkedin.com/in/colinverriere/" target="_blank" aria-label="LinkedIn">
-            <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/linkedin-app-white-icon.svg" alt="LinkedIn" style="height: 24px; margin: 0 10px;" />
-          </a>
-          
-          <a href="./pdf/CV_Colin_VERRIERE_English.pdf" target="_blank" aria-label="Resume">
-            <img src="https://uxwing.com/wp-content/themes/uxwing/download/file-and-folder-type/pdf-icon.svg" alt="PDF" style="height: 24px; margin: 0 10px;" />
-          </a>
-          
-          <a aria-label="Email" href="mailto:colin.verriere@gmx.fr" target="_blank">
-            <img src="https://cdn.simpleicons.org/maildotru/white" alt="Email" style="height: 24px; margin: 0 10px;" />
-          </a>
-        </div><br><br>
-        <nav class="header-links">
-          <a class="link" href="#about">About</a>
-          <a class="link" href="#projects">Projects</a>
-        </nav>
-      </header>
-      <a class="down" href="#about">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-          <polyline points="6 9 12 15 18 9" />
-        </svg>
-      </a>
-    </div>
+    <header class="header">
+      <h1>
+        <span class="site-title">Colin VERRIERE</span>
+        <span class="site-description">Software Engineer • Web Developer • Test Analyst</span>
+      </h1>
+      <div class="header-icons">
+        <a href="https://github.com/colinvrr" target="_blank" aria-label="GitHub" title="GitHub">
+          <img src="./assets/img/png/github.png" alt="GitHub logo" style="height: 24px; margin: 0 10px;" />
+        </a>
+        
+        <a href="https://www.linkedin.com/in/colinverriere/" target="_blank" aria-label="LinkedIn">
+          <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/linkedin-app-white-icon.svg" alt="LinkedIn" style="height: 24px; margin: 0 10px;" />
+        </a>
+        
+        <a href="./pdf/CV_Colin_VERRIERE_English.pdf" target="_blank" aria-label="Resume">
+          <img src="https://uxwing.com/wp-content/themes/uxwing/download/file-and-folder-type/pdf-icon.svg" alt="PDF" style="height: 24px; margin: 0 10px;" />
+        </a>
+        
+        <a aria-label="Email" href="mailto:colin.verriere@gmx.fr" target="_blank">
+          <img src="https://cdn.simpleicons.org/maildotru/white" alt="Email" style="height: 24px; margin: 0 10px;" />
+        </a>
+      </div><br><br>
+      <nav class="header-links">
+        <a class="link" href="#about">About</a>
+        <a class="link" href="#projects">Projects</a>
+      </nav>
+    </header>
+    <a class="down" href="#about" aria-label="Scroll to about">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#ffffff" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+        <polyline points="6 9 12 15 18 9" />
+      </svg>
+    </a>
+  </div>
 
     <section id="about">
       <div class="user-details">
         <h1>
-          <span class="txt-type" data-wait="3000" data-words='["About Me"]'></span>
-          <span class="blinking-cursor">|</span>
-        </h1>
-        <picture>
-          <source type="image/webp" srcset="./assets/img/webp/Professional-Picture.webp" alt="Professional photo"
-            width="20%" style="border-radius: 50%" />
-          <img src="./assets/img/jpg/Professional-Picture.jpg" alt="Professional photo" width="20%"
-            style="border-radius: 50%" />
-        </picture>
+            <span class="txt-type" data-wait="3000" data-words='["About Me"]'></span>
+            <span class="blinking-cursor">|</span>
+          </h1>
+<picture>
+  <source type="image/webp" srcset="./assets/img/jpg/colin.jpg" alt="Professional photo" class="profile-photo" />
+  <img src="./assets/img/jpg/colin.jpg" alt="Professional photo" class="profile-photo" />
+</picture>
+
 
         <div class="photo-gallery">
           <div class="flip-card">
@@ -305,7 +176,7 @@
             <img src="https://cdn.simpleicons.org/bootstrap/7952B3" alt="Bootstrap"
               style="height: 40px; margin: 0 10px;" />
             <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" style="height: 40px; margin: 0 10px;" />
-            <img src="https://cdn.simpleicons.org/css3/1572B6" alt="CSS3" style="height: 40px; margin: 0 10px;" />
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/css3.svg" alt="CSS3" style="height: 40px; margin: 0 10px;" />
           </div>
           <p>
             Modern frontend frameworks and styling systems that I use to create responsive, dynamic, and user-friendly
@@ -373,7 +244,7 @@
             <div class="details">
               ↳ Web3 travel platform — <em>React, Web3.js, Amadeus, Ticketmaster</em><br>
               ↳ <a href="#projects" class="modal-link open-modal-btn">More Détails</a><br>
-              ↳ <a href="https://github.com/nathan-verdeyme/HotelPFE" target="_blank">🔗 View on GitHub</a><br>
+              ↳ <a href="https://github.com/nathan-verdeyme/HotelPFE" target="_blank">View on GitHub</a><br>
               
             </div>
             <div class="modal-overlay" id="modal">
@@ -433,12 +304,12 @@
                   transparency, and innovation in their travel planning. With its blend of blockchain, AI-based pricing
                   models, and real-time API integrations, Stay & Fly represents a new era in travel tech.</p>
 
-                <p><a href="https://github.com/nathan-verdeyme/HotelPFE" target="_blank">🔗 View GitHub Repo</a></p>
+                <p><a href="https://github.com/nathan-verdeyme/HotelPFE" target="_blank">View GitHub Repo</a></p>
 
                 <div class="modal-video">
                   <h5>🎥 Project Demo Video</h5>
                   <video controls>
-                    <source src="./assets/img/video/STAY_DEMO.mp4" type="video/mp4">
+                    <source src="./assets/img/video/stay_demo.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
                 </div>
@@ -451,122 +322,165 @@
     </section>
 
     <footer class="footer">
-      <p>&copy; Colin VERRIERE, 2025</p>
-    </footer>
+        <p>&copy; Colin VERRIERE, 2025</p>
+      </footer>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="./assets/js/sweet-scroll.min.js"></script>
-    <script src="./assets/js/google-analytics.js"></script>
-    <script src="./assets/js/main.js"></script>
-    <script>
-      function toggleDropdown() {
-        const dropdown = document.getElementById("themeDropdown");
-        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-      }
+    <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="./assets/js/sweet-scroll.min.js"></script>
+  <script src="./assets/js/google-analytics.js"></script>
+  <script src="./assets/js/main.js"></script>
 
-      function setTheme(mode) {
-        localStorage.setItem("theme", mode);
-        applyTheme();
-      }
+  <script>
+    // Menu burger toggle
+    function toggleMenu() {
+      document.getElementById("mainNav").classList.toggle("active");
+    }
 
-      function applyTheme() {
-        const mode = localStorage.getItem("theme") || "auto";
-        if (mode === "dark") {
-          document.documentElement.setAttribute("data-theme", "dark");
-        } else if (mode === "light") {
-          document.documentElement.setAttribute("data-theme", "light");
-        } else {
-          const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-          document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
-        }
-      }
-
-      const links = document.querySelectorAll('.nav-links a');
-      links.forEach(link => {
-        link.addEventListener('click', () => {
-          links.forEach(l => l.classList.remove('active'));
-          link.classList.add('active');
-        });
-      });
-
-      applyTheme();
-    </script>
-
-    <script>
-      const text = "ls -la";
-      const typedText = document.getElementById("typed-text");
-      let index = 0;
-
-      function type() {
-        if (index < text.length) {
-          typedText.textContent += text.charAt(index);
-          index++;
-          setTimeout(type, 100); // Vitesse de frappe
-        }
-      }
-
-      document.addEventListener("DOMContentLoaded", type);
-    </script>
-    <script>
+    // Thème
+    function toggleDropdown() {
       const dropdown = document.getElementById("themeDropdown");
-      const toggleBtn = document.querySelector(".theme-toggle button");
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    }
 
-      function toggleDropdown() {
-        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-      }
+    function setTheme(mode) {
+      localStorage.setItem("theme", mode);
+      applyTheme();
+      document.getElementById("themeDropdown").style.display = "none";
+    }
 
-      function closeDropdownOnClickOutside(event) {
-        if (!dropdown.contains(event.target) && !toggleBtn.contains(event.target)) {
+    function applyTheme() {
+      const mode = localStorage.getItem("theme") || "auto";
+      const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.setAttribute("data-theme", mode === "dark" ? "dark" : mode === "light" ? "light" : (isDark ? "dark" : "light"));
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      applyTheme();
+      document.addEventListener("click", (e) => {
+        const dropdown = document.getElementById("themeDropdown");
+        const toggleBtn = document.querySelector(".theme-toggle button");
+        if (!dropdown.contains(e.target) && !toggleBtn.contains(e.target)) {
           dropdown.style.display = "none";
         }
-      }
+      });
+    });
+  </script>
 
-      function setTheme(mode) {
-        localStorage.setItem("theme", mode);
-        applyTheme();
-        dropdown.style.display = "none"; // Ferme après sélection
+<script>
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      let newTheme;
+  
+      if (currentTheme === 'dark') {
+        newTheme = 'light';
+      } else {
+        newTheme = 'dark';
       }
+  
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    }
+  
+    // Appliquer le thème sauvegardé au chargement
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      }
+    });
+  </script>
 
-      function applyTheme() {
-        const mode = localStorage.getItem("theme") || "auto";
-        if (mode === "dark") {
-          document.documentElement.setAttribute("data-theme", "dark");
-        } else if (mode === "light") {
-          document.documentElement.setAttribute("data-theme", "light");
+<script>
+    class TypeWriter {
+      constructor(txtElement, words, wait = 3000) {
+        this.txtElement = txtElement;
+        this.words = words;
+        this.txt = '';
+        this.wordIndex = 0;
+        this.wait = parseInt(wait, 10);
+        this.type();
+        this.isDeleting = false;
+      }
+  
+      type() {
+        const current = this.wordIndex % this.words.length;
+        const fullTxt = this.words[current];
+  
+        if (this.isDeleting) {
+          this.txt = fullTxt.substring(0, this.txt.length - 1);
         } else {
-          const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-          document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+          this.txt = fullTxt.substring(0, this.txt.length + 1);
         }
+  
+        this.txtElement.innerHTML = this.txt;
+  
+        let typeSpeed = 150;
+  
+        if (this.isDeleting) {
+          typeSpeed /= 2;
+        }
+  
+        if (!this.isDeleting && this.txt === fullTxt) {
+          typeSpeed = this.wait;
+          this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+          this.isDeleting = false;
+          this.wordIndex++;
+          typeSpeed = 500;
+        }
+  
+        setTimeout(() => this.type(), typeSpeed);
       }
+    }
+  
+    document.addEventListener('DOMContentLoaded', init);
+  
+    function init() {
+      const txtElement = document.querySelector('.txt-type');
+      const words = JSON.parse(txtElement.getAttribute('data-words'));
+      const wait = txtElement.getAttribute('data-wait');
+      new TypeWriter(txtElement, words, wait);
+    }
+  </script>
 
-      document.addEventListener("DOMContentLoaded", () => {
-        applyTheme();
-        document.addEventListener("click", closeDropdownOnClickOutside);
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const openModalBtns = document.querySelectorAll('.open-modal-btn');
+      const modal = document.getElementById('modal');
+      const closeModalBtn = document.querySelector('.close-modal-btn');
+  
+      openModalBtns.forEach(btn => {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          modal.style.display = 'flex';
+        });
       });
-    </script>
-
-    <script>
-      document.querySelector('.open-modal-btn').addEventListener('click', (e) => {
-        e.preventDefault(); // empêche le scroll vers le haut si c'est un lien
-        document.getElementById('modal').style.display = 'flex';
-
-        // Défilement doux de la galerie
-        const modalGallery = document.querySelector('.modal-gallery');
-        if (modalGallery) {
-          modalGallery.scrollTo({ left: 100, behavior: 'smooth' });
+  
+      closeModalBtn.addEventListener('click', function () {
+        modal.style.display = 'none';
+      });
+  
+      window.addEventListener('click', function (e) {
+        if (e.target === modal) {
+          modal.style.display = 'none';
         }
       });
-
-      document.querySelector('.close-modal-btn').addEventListener('click', () => {
-        document.getElementById('modal').style.display = 'none';
+    });
+  </script>
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('.main-nav');
+      nav.classList.toggle('show');
+    }
+  
+    // Optionnel : refermer le menu après clic sur un lien (UX mobile)
+    document.querySelectorAll('.main-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.main-nav').classList.remove('show');
       });
-
-      window.addEventListener('click', e => {
-        if (e.target.id === 'modal') {
-          document.getElementById('modal').style.display = 'none';
-        }
-      });
-    </script>
-  </body>
+    });
+  </script>
+</body>
 
 </html>
