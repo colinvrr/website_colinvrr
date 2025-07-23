@@ -1,486 +1,717 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Colin VERRIERE | Software Engineer</title>
-  <link rel="shortcut icon" href="./assets/img/fav.ico" />
-  <link rel="stylesheet" href="./assets/css/main.css" />
-</head>
+  <meta charset="utf-8"/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&amp;display=swap" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Colin Verriere | Développeur Fullstack &amp; Créatif</title>
+  <meta name="description" content="Portfolio de Colin Verriere — développeur fullstack passionné par le web, les interfaces, et l’innovation numérique."/>
+  <meta property="og:title" content="Colin Verriere | Portfolio Développeur"/>
+  <meta property="og:description" content="Découvrez mes projets, mon univers et mes compétences en développement web."/>
+  <meta property="og:image" content="./assets/img/jpg/colin.jpg"/>
+  <meta property="og:url" content="https://colinverriere.dev"/>
+  <meta property="og:type" content="website"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="shortcut icon" href="./assets/img/fav.ico"/>
+  <link rel="stylesheet" href="./assets/css/main.css"/>
 
+  <!-- initialisation du thème avant le rendu -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme'); // 'light' | 'dark'
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = saved || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
 <body>
   <!-- HEADER & PARTICLES -->
   <div id="particles-js">
-    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
-
+    <button aria-label="Toggle theme" class="theme-toggle">
+      <span class="icon">🌙</span>
+    </button>
     <header class="header">
       <h1>
         <span class="site-title">Colin VERRIERE</span>
         <span class="site-description">Software Engineer • Web Developer • Test Analyst</span>
       </h1>
       <div class="header-icons">
-        <a href="https://github.com/colinvrr" target="_blank" aria-label="GitHub" title="GitHub">
-          <img src="./assets/img/png/github.png" alt="GitHub logo" style="height: 24px; margin: 0 10px;" />
+        <a aria-label="GitHub" href="https://github.com/colinvrr" target="_blank" title="GitHub">
+          <img alt="GitHub logo" src="./assets/img/png/github.png" style="height:24px; margin:0 10px;"/>
         </a>
-        
-        <a href="https://www.linkedin.com/in/colinverriere/" target="_blank" aria-label="LinkedIn">
-          <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/linkedin-app-white-icon.svg" alt="LinkedIn" style="height: 24px; margin: 0 10px;" />
+        <a aria-label="LinkedIn" href="https://www.linkedin.com/in/colinverriere/" target="_blank">
+          <img alt="LinkedIn" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/linkedin-app-white-icon.svg" style="height:24px; margin:0 10px;"/>
         </a>
-        
-        <a href="./pdf/CV_Colin_VERRIERE_English.pdf" target="_blank" aria-label="Resume">
-          <img src="https://uxwing.com/wp-content/themes/uxwing/download/file-and-folder-type/pdf-icon.svg" alt="PDF" style="height: 24px; margin: 0 10px;" />
+        <a aria-label="Resume" href="./pdf/CV_Colin_VERRIERE.pdf" target="_blank">
+          <img alt="PDF" src="https://uxwing.com/wp-content/themes/uxwing/download/file-and-folder-type/pdf-icon.svg" style="height:24px; margin:0 10px;"/>
         </a>
-        
         <a aria-label="Email" href="mailto:colin.verriere@gmx.fr" target="_blank">
-          <img src="https://cdn.simpleicons.org/maildotru/white" alt="Email" style="height: 24px; margin: 0 10px;" />
+          <img alt="Email" src="https://cdn.simpleicons.org/maildotru/white" style="height:24px; margin:0 10px;"/>
         </a>
-      </div><br><br>
+      </div>
       <nav class="header-links">
         <a class="link" href="#about">About</a>
         <a class="link" href="#projects">Projects</a>
       </nav>
     </header>
-    <a class="down" href="#about" aria-label="Scroll to about">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#ffffff" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-        <polyline points="6 9 12 15 18 9" />
+    <a id="cv-floating-badge" aria-label="Download CV" href="./pdf/CV_Colin_VERRIERE.pdf" target="_blank">
+      <img alt="CV" src="./assets/img/cv_preview.png"/>
+    </a>
+    <a class="down" aria-label="Scroll to about" href="#about">
+      <svg class="feather feather-chevron-down" fill="none" height="24" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="24" xmlns="http://www.w3.org/2000/svg">
+        <polyline points="6 9 12 15 18 9"></polyline>
       </svg>
     </a>
   </div>
-
-    <section id="about">
-      <div class="user-details">
-        <h1>
-            <span class="txt-type" data-wait="3000" data-words='["About Me"]'></span>
-            <span class="blinking-cursor">|</span>
-          </h1>
+<section id="about">
+<div class="user-details">
+<h1>
+<span class="txt-type" data-wait="3000" data-words='["About Me"]'></span>
+<span class="blinking-cursor">|</span>
+</h1>
 <picture>
-  <source type="image/webp" srcset="./assets/img/jpg/colin.jpg" alt="Professional photo" class="profile-photo" />
-  <img src="./assets/img/jpg/colin.jpg" alt="Professional photo" class="profile-photo" />
+<source alt="Professional photo" class="profile-photo" srcset="./assets/img/jpg/colin.jpg" type="image/webp"/>
+<img alt="Professional photo" class="profile-photo" src="./assets/img/jpg/colin.jpg"/>
 </picture>
-
-
-        <div class="photo-gallery">
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="./assets/img/photos/IMG_course.png" alt="Colin Front" />
-              </div>
-              <div class="flip-card-back">
-                <img src="./assets/img/photos/photopaper.png" alt="Colin Back" />
-                <div class="date-stamp">
-                  RUNNING.JPG<br>
+<div class="photo-gallery">
+<div class="flip-card">
+<div class="flip-card-inner">
+<div class="flip-card-front">
+<img alt="Colin Front" src="./assets/img/photos/IMG_course.png"/>
+</div>
+<div class="flip-card-back">
+<img alt="Colin Back" src="./assets/img/photos/photopaper.png"/>
+<div class="date-stamp">
+                  RUNNING.JPG<br/>
                   2025-03-31
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="./assets/img/photos/IMG_pro.jpg" alt="Colin Front" />
-              </div>
-              <div class="flip-card-back">
-                <img src="./assets/img/photos/photopaper.png" alt="Colin Back" />
-                <div class="date-stamp">
-                  BARCELONA.JPG<br>
-                  2024-08-24
+</div>
+</div>
+</div>
+<div class="flip-card">
+<div class="flip-card-inner">
+<div class="flip-card-front">
+<img alt="Colin Front" src="./assets/img/photos/IMG_pro.jpg"/>
+</div>
+<div class="flip-card-back">
+<img alt="Colin Back" src="./assets/img/photos/photopaper.png"/>
+<div class="date-stamp">
+                  BOUYGUES.JPG<br/>
+                  2024-07-24
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="./assets/img/photos/IMG_stay.jpg" alt="Colin Front" />
-              </div>
-              <div class="flip-card-back">
-                <img src="./assets/img/photos/photopaper.png" alt="Colin Back" />
-                <div class="date-stamp">
-                  STAY&FLY.JPG<br>
+</div>
+</div>
+</div>
+<div class="flip-card">
+<div class="flip-card-inner">
+<div class="flip-card-front">
+<img alt="Colin Front" src="./assets/img/photos/IMG_stay.jpg"/>
+</div>
+<div class="flip-card-back">
+<img alt="Colin Back" src="./assets/img/photos/photopaper.png"/>
+<div class="date-stamp">
+                  STAY&amp;FLY.JPG<br/>
                   2025-04-02
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="./assets/img/photos/IMG_ski.jpg" alt="Colin Front" />
-              </div>
-              <div class="flip-card-back">
-                <img src="./assets/img/photos/photopaper.png" alt="Colin Back" />
-                <div class="date-stamp">
-                  DOWNHILL_SKIING.JPG<br>
+</div>
+</div>
+</div>
+<div class="flip-card">
+<div class="flip-card-inner">
+<div class="flip-card-front">
+<img alt="Colin Front" src="./assets/img/photos/IMG_ski.jpg"/>
+</div>
+<div class="flip-card-back">
+<img alt="Colin Back" src="./assets/img/photos/photopaper.png"/>
+<div class="date-stamp">
+                  DOWNHILL_SKIING.JPG<br/>
                   2025-02-13
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <p class="about-text">
+</div>
+</div>
+</div>
+</div>
+<p class="about-text">
           I'm a recent graduate from <strong>ESME Sudria – Engineering School, Paris</strong>, where I specialized in
           <strong>Information Systems Management</strong>.
           Over the past three years, I gained solid experience as an <strong>apprentice QA Analyst</strong> at
           <strong>Bouygues Telecom</strong>, contributing to test automation, validation processes, and quality
           assurance in an enterprise environment.
-          <br><br>
+          <br/><br/>
           My responsibilities included defining test strategies, developing automated test cases with <strong>Robot
             Framework</strong>, and collaborating with developers to track and resolve issues, all within
           <strong>Agile/Scrum</strong> teams using tools like <strong>JIRA</strong> and <strong>Xray</strong>.
-          <br><br>
+          <br/><br/>
           In parallel, I explored <strong>fullstack development</strong> through academic and side projects. I was the
-          lead frontend developer on <strong>Stay&Fly</strong>, an award-winning travel management platform (2nd place
+          lead frontend developer on <strong>Stay&amp;Fly</strong>, an award-winning travel management platform (2nd place
           at ESME), where I implemented a complete React-based UI, API integrations (Amadeus, Ticketmaster), and smart
           contract features via Web3.js.
-          <br><br>
+          <br/><br/>
           I am now actively seeking a <strong>full-time position (CDI)</strong> as a <strong>Fullstack
             Developer</strong> or <strong>Software Engineer</strong>. I'm eager to join a collaborative team where I can
           bring value to impactful web applications or information systems while continuing to grow technically and
           professionally.
         </p>
-      </div>
-      <div class="floating-blobs">
-        <div class="blob blob1"></div>
-        <div class="blob blob2"></div>
-      </div>
-
-      <div class="tech-grid">
-        <div class="tech-card">
-          <h2 class="card-title">Languages</h2>
-          <div class="icon-row">
-            <img src="https://cdn.simpleicons.org/python/3776AB" alt="Python" style="height: 40px; margin: 0 10px;" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"
-              style="height: 40px; margin: 0 10px;" />
-            <img src="https://cdn.simpleicons.org/cplusplus/00599C" alt="C++" style="height: 40px; margin: 0 10px;" />
-            <img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript"
-              style="height: 40px; margin: 0 10px;" />
-          </div>
-          <p>
+</div>
+<div class="floating-blobs">
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+</div>
+<div class="tech-grid">
+<div class="tech-card">
+<h2 class="card-title">Languages</h2>
+<div class="icon-row">
+<img alt="Python" src="https://cdn.simpleicons.org/python/3776AB" style="height: 40px; margin: 0 10px;"/>
+<img alt="Java" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" style="height: 40px; margin: 0 10px;"/>
+<img alt="C++" src="https://cdn.simpleicons.org/cplusplus/00599C" style="height: 40px; margin: 0 10px;"/>
+<img alt="TypeScript" src="https://cdn.simpleicons.org/typescript/3178C6" style="height: 40px; margin: 0 10px;"/>
+</div>
+<p>
             Languages I use for backend development, scripting, and test automation in real-world environments. These
             include strong-typed languages like Java and TypeScript, interpreted languages like Python for automation,
             and low-level languages like C++ from my engineering background.
           </p>
-        </div>
-
-        <div class="tech-card">
-          <h2 class="card-title">Front-End</h2>
-          <div class="icon-row">
-            <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React" style="height: 40px; margin: 0 10px;" />
-            <img src="https://cdn.simpleicons.org/bootstrap/7952B3" alt="Bootstrap"
-              style="height: 40px; margin: 0 10px;" />
-            <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" style="height: 40px; margin: 0 10px;" />
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/css3.svg" alt="CSS3" style="height: 40px; margin: 0 10px;" />
-          </div>
-          <p>
+</div>
+<div class="tech-card">
+<h2 class="card-title">Front-End</h2>
+<div class="icon-row">
+<img alt="React" src="https://cdn.simpleicons.org/react/61DAFB" style="height: 40px; margin: 0 10px;"/>
+<img alt="Bootstrap" src="https://cdn.simpleicons.org/bootstrap/7952B3" style="height: 40px; margin: 0 10px;"/>
+<img alt="HTML5" src="https://cdn.simpleicons.org/html5/E34F26" style="height: 40px; margin: 0 10px;"/>
+<img alt="CSS3" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/css3.svg" style="height: 40px; margin: 0 10px;"/>
+</div>
+<p>
             Modern frontend frameworks and styling systems that I use to create responsive, dynamic, and user-friendly
             interfaces. My stack includes component-based frameworks like React, layout systems like Bootstrap, and web
             standards like HTML5 and CSS3.
           </p>
-        </div>
-
-        <div class="tech-card">
-          <h2 class="card-title">Back-End</h2>
-          <div class="icon-row">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"
-              style="height: 40px; margin: 0 10px;" />
-            <img src="https://cdn.simpleicons.org/php/777BB4" alt="PHP" style="height: 40px; margin: 0 10px;" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg"
-              alt="JavaScript" style="height: 40px; margin: 0 10px;" />
-            <img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL"
-              style="height: 40px; margin: 0 10px;" />
-          </div>
-          <p>
+</div>
+<div class="tech-card">
+<h2 class="card-title">Back-End</h2>
+<div class="icon-row">
+<img alt="Java" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" style="height: 40px; margin: 0 10px;"/>
+<img alt="PHP" src="https://cdn.simpleicons.org/php/777BB4" style="height: 40px; margin: 0 10px;"/>
+<img alt="JavaScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" style="height: 40px; margin: 0 10px;"/>
+<img alt="PostgreSQL" src="https://cdn.simpleicons.org/postgresql/4169E1" style="height: 40px; margin: 0 10px;"/>
+</div>
+<p>
             Server-side languages and database systems used to build scalable, secure, and maintainable APIs and
             application logic. I work with technologies like Java, PHP, JavaScript (Node.js), and PostgreSQL to power
             backend services in both professional and academic projects.
           </p>
-        </div>
-
-        <div class="tech-card">
-          <h2 class="card-title">Tools</h2>
-          <div class="icon-row">
-            <img src="https://cdn.simpleicons.org/git/F05032" alt="Git" style="height: 40px; margin: 0 10px;" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg"
-              alt="github" style="height: 40px; margin: 0 10px;" />
-            <img src="https://cdn.simpleicons.org/postman/FF6C37" alt="Postman" style="height: 40px; margin: 0 10px;" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg"
-              alt="VS Code" style="height: 40px; margin: 0 10px;" />
-          </div>
-          <p>
+</div>
+<div class="tech-card">
+<h2 class="card-title">Tools</h2>
+<div class="icon-row">
+<img alt="Git" src="https://cdn.simpleicons.org/git/F05032" style="height: 40px; margin: 0 10px;"/>
+<img alt="github" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" style="height: 40px; margin: 0 10px;"/>
+<img alt="Postman" src="https://cdn.simpleicons.org/postman/FF6C37" style="height: 40px; margin: 0 10px;"/>
+<img alt="VS Code" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" style="height: 40px; margin: 0 10px;"/>
+</div>
+<p>
             Tools I rely on for version control, team collaboration, API testing, and development workflow automation.
             My daily toolkit includes Git/GitHub for code tracking, Docker for containerization, Postman for API
             development and testing,
             and VS Code for efficient coding across multiple stacks.
           </p>
-        </div>
-      </div>
-    </section>
+</div>
+</div>
 
-    <section id="projects" class="terminal-projects">
-      <div class="terminal-wrapper">
-        <div class="terminal-topbar">
-          <div class="traffic-buttons">
-            <span class="btn red"></span>
-            <span class="btn yellow"></span>
-            <span class="btn green"></span>
-          </div>
-          <div class="terminal-title">colinverriere — colinverriere@MacBook-Colin — ~ — -zsh — 80×24</div>
-        </div>
-        <div class="terminal-header animated-terminal">
-          <span class="prompt">colin@verriere</span>:<span class="path">~/projects</span>$ <span
-            id="typed-text"></span><span class="cursor">█</span>
-        </div>
+</section>
+<section class="terminal-projects" id="projects">
+<div class="terminal-wrapper">
+<div class="terminal-topbar">
+<div class="traffic-buttons">
+<span class="btn red"></span>
+<span class="btn yellow"></span>
+<span class="btn green"></span>
+</div>
+<!-- Bloc terminal -->
+<div class="terminal-title">colinverriere — colinverriere@MacBook-Colin — ~ — -zsh — 80×24</div>
+</div>
+<div class="terminal-header animated-terminal">
+  <span class="prompt">colin@verriere</span>:<span class="path">~/projects</span>$ <span id="typed-text"></span><span class="cursor">█</span>
+</div>
+<div class="terminal-body">
+  <div class="terminal-line">
+    <span class="cmd">Stay&amp;Fly</span>
+    <div class="details">
+      ↳ Web3 travel platform — <em>React, Web3.js, Amadeus, Ticketmaster</em><br/>
+      ↳ <a class="modal-link open-modal-btn" href="#modal-stayfly">More Détails</a><br/>
+      ↳ <a href="https://github.com/nathan-verdeyme/HotelPFE" target="_blank">View on GitHub</a><br/>
+    </div>
+  </div>
 
-        <div class="terminal-body">
-          <div class="terminal-line">
-            <span class="cmd">Stay&Fly</span>
-            <div class="details">
-              ↳ Web3 travel platform — <em>React, Web3.js, Amadeus, Ticketmaster</em><br>
-              ↳ <a href="#projects" class="modal-link open-modal-btn">More Détails</a><br>
-              ↳ <a href="https://github.com/nathan-verdeyme/HotelPFE" target="_blank">View on GitHub</a><br>
-              
-            </div>
-            <div class="modal-overlay" id="modal">
-              <div class="modal-content">
-                <span class="close-modal-btn">&times;</span>
-                <div class="modal-gallery">
-                  <img src="./assets/img/png/STAY1.png" alt="Stay&Fly Screenshot 2" />
-                  <img src="./assets/img/png/STAY2.png" alt="Stay&Fly Screenshot 3" />
-                  <img src="./assets/img/png/STAY3.png" alt="Stay&Fly Screenshot 4" />
-                  <img src="./assets/img/png/STAY4.png" alt="Stay&Fly Screenshot 1" />
-                  <img src="./assets/img/png/STAY6.jpg" alt="Stay&Fly Screenshot 6" />
-                  <img src="./assets/img/png/STAY5.jpg" alt="Stay&Fly Screenshot 5" />
-                </div>
-                <h4>Stay & Fly – <br>2nd Place Master Project at ESME</h4>
-                <p><strong>Stay & Fly</strong> is a full-stack Web3 travel platform designed to reshape the way people
-                  book, manage, and resell their travel plans. Developed by three final-year engineering students from
-                  ESME – Nathan Verdeyme, Colin Verriere, and Nabil Kerkoub – the project was realized in partnership
-                  with <strong>Amadeus</strong>, a global leader in travel technology.</p>
+  <div class="terminal-line">
+    <span class="cmd">HelpDesk AI</span>
+    <div class="details">
+      ↳ Chatbot interne DSI — <em>Python, FastAPI, LangChain, MongoDB</em><br/>
+      ↳ <a class="modal-link open-modal-btn" href="#modal-helpdesk">More Détails</a><br/>
+    </div>
+  </div>
 
-                <p>The platform combines hotel booking, flight reservation, secondary market resale, and activity
-                  planning in a single interface. It leverages modern technologies such as <strong>ReactJS</strong> for
-                  the front-end, <strong>Node.js/Express</strong> for the backend, and <strong>Web3.js</strong> to
-                  interact with a private Ethereum blockchain hosted on <strong>Microsoft Azure</strong>.</p>
+  <div class="terminal-line">
+    <span class="cmd">SecureMail</span>
+    <div class="details">
+      ↳ Messagerie locale chiffrée — <em>Electron, Node.js, AES-256</em><br/>
+      ↳ <a class="modal-link open-modal-btn" href="#modal-securemail">More Détails</a><br/>
+    </div>
+  </div>
 
-                <p><strong>Main features:</strong></p>
-                <ul>
-                  <li><strong>Hotel reservation & resale:</strong> Users can book hotels using the Amadeus API. In case
-                    of a change of plans, they can resell their reservation as an NFT on a private marketplace. Each
-                    reservation is tokenized using a custom ERC-721 smart contract, ensuring secure, traceable
-                    transactions via blockchain. Hotels benefit from an exclusive preview period to repurchase
-                    reservations before they're publicly listed.</li>
-                  <li><strong>Flight price negotiation:</strong> The platform introduces a dynamic negotiation system
-                    where users can propose a price for a flight ticket. Partner airlines can accept, reject, or
-                    counter-offer using an admin interface. This model promotes better seat occupancy and personalized
-                    pricing strategies.</li>
-                  <li><strong>Activity planner:</strong> Integrated with the Ticketmaster API and Google Maps, this
-                    module allows users to search for concerts, sports events, and local attractions at their
-                    destination. Users can build a personalized itinerary and receive a full summary by email.</li>
-                </ul>
+  <div class="terminal-line">
+    <span class="cmd">AuthAudit</span>
+    <div class="details">
+      ↳ Audit de connexions & brute-force — <em>Python, Flask, sécurité offensive</em><br/>
+      ↳ <a class="modal-link open-modal-btn" href="#modal-authaudit">More Détails</a><br/>
+    </div>
+  </div>
 
-                <p><strong>Technical highlights:</strong></p>
-                <ul>
-                  <li>Dual-server architecture (Node.js): one for hotel/activities/blockchain, another for
-                    flights/negotiation</li>
-                  <li>JWT authentication, secure payments, and smart contract integration via Web3.js</li>
-                  <li>Azure SQL database with relational schemas for users, reservations, transactions, and flight
-                    negotiations</li>
-                  <li>React components designed for modularity, responsiveness, and smooth UX</li>
-                  <li>Smart contracts (ReservationNFT & Marketplace) deployed via Remix and controlled via MetaMask</li>
-                </ul>
 
-                <p>The project was rigorously tested with both manual (Postman, SoapUI) and automated approaches,
-                  ensuring stability, scalability, and a professional-grade product. A private Geth-based Ethereum
-                  blockchain ensures full ownership and transparency of hotel bookings through NFT technology.</p>
+<!-- Modale Stay&Fly -->
+<div class="modal-overlay" id="modal-stayfly">
+  <div class="modal-content">
+    <span class="close-modal-btn">×</span>
+    <div class="modal-gallery">
+      <img alt="Stay&amp;Fly Screenshot 2" src="./assets/img/png/STAY1.png"/>
+      <img alt="Stay&amp;Fly Screenshot 3" src="./assets/img/png/STAY2.png"/>
+      <img alt="Stay&amp;Fly Screenshot 4" src="./assets/img/png/STAY3.png"/>
+      <img alt="Stay&amp;Fly Screenshot 1" src="./assets/img/png/STAY4.png"/>
+      <img alt="Stay&amp;Fly Screenshot 6" src="./assets/img/png/STAY6.jpg"/>
+      <img alt="Stay&amp;Fly Screenshot 5" src="./assets/img/png/STAY5.jpg"/>
+    </div>
+    <h4>Stay &amp; Fly – <br/>2nd Place Master Project at ESME</h4>
+    <p><strong>Stay &amp; Fly</strong> est une plateforme de voyage Web3 complète, développée par trois étudiants ingénieurs de dernière année à l'ESME. L'objectif était de repenser la réservation de voyages avec les technologies blockchain, en partenariat avec <strong>Amadeus</strong>.</p>
+    <ul>
+      <li><strong>Réservation d'hôtels + revente :</strong> les réservations sont transformées en NFT (via smart contracts ERC-721) et peuvent être revendues sur une marketplace privée. Les hôtels ont une période de rachat prioritaire.</li>
+      <li><strong>Négociation de vols :</strong> l'utilisateur propose un prix, les compagnies peuvent l'accepter ou proposer un contre-offre via une interface dédiée.</li>
+      <li><strong>Planification d’activités :</strong> grâce à Ticketmaster et Google Maps, l’utilisateur construit son itinéraire personnalisé avec des concerts, événements, etc.</li>
+    </ul>
+    <p>Architecture full-stack avec React, Node.js, SQL Azure, Web3.js, blockchain privée Ethereum (Geth). Sécurité assurée par JWT et paiements sécurisés.</p>
+    <div class="modal-video">
+      <h5>🎥 Project Demo Video</h5>
+      <video controls>
+        <source src="./assets/img/video/stay_demo.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </div>
+</div>
 
-                <p>Stay & Fly is targeted at casual travelers, professionals, and agencies who seek flexibility,
-                  transparency, and innovation in their travel planning. With its blend of blockchain, AI-based pricing
-                  models, and real-time API integrations, Stay & Fly represents a new era in travel tech.</p>
+<!-- Modale HelpDesk AI -->
+<div class="modal-overlay" id="modal-helpdesk">
+  <div class="modal-content">
+    <span class="close-modal-btn">×</span>
+    <h4>HelpDesk AI – Chatbot interne pour DSI</h4>
+    <p><strong>HelpDesk AI</strong> est un assistant virtuel développé en Python pour aider les équipes internes d'une DSI à répondre automatiquement aux demandes des collaborateurs.</p>
+    <ul>
+      <li><strong>Compréhension du langage naturel :</strong> grâce à LangChain, le bot comprend les questions courantes comme "Comment accéder au VPN ?" ou "Où trouver la charte informatique ?"</li>
+      <li><strong>Réponses basées sur des documents internes :</strong> une base de données MongoDB contient les procédures, manuels, et FAQ indexés.</li>
+      <li><strong>API REST légère :</strong> FastAPI permet une intégration fluide avec l'intranet ou Microsoft Teams via webhook.</li>
+    </ul>
+    <p>Le projet a été pensé pour automatiser jusqu’à 60 % des demandes récurrentes sans intervention humaine, avec une interface simple à maintenir et enrichir.</p>
+  </div>
+</div>
 
-                <p><a href="https://github.com/nathan-verdeyme/HotelPFE" target="_blank">View GitHub Repo</a></p>
+<!-- Modale SecureMail AI -->
 
-                <div class="modal-video">
-                  <h5>🎥 Project Demo Video</h5>
-                  <video controls>
-                    <source src="./assets/img/video/stay_demo.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Ajoute d'autres projets ici -->
-        </div>
-    </section>
+<div class="modal-overlay" id="modal-securemail">
+  <div class="modal-content">
+  <span class="close-modal-btn">×</span>
+  <h4>SecureMail –<br/> Messagerie chiffrée locale</h4>
+  <p><strong>SecureMail</strong> est une application de messagerie conçue pour les environnements internes sensibles (ex. cabinet médical, réseau d'entreprise). Elle permet l’échange sécurisé de messages en local, sans aucun serveur externe.</p>
+  <p>Les messages sont chiffrés côté client en <strong>AES-256</strong> et les clés échangées via <strong>Diffie-Hellman</strong>. L’interface, développée avec <strong>Electron</strong>, permet une compatibilité multi-plateforme et un déploiement facile.</p>
+  <p><strong>Fonctionnalités clés :</strong></p>
+  <ul>
+  <li>Chiffrement de bout en bout des messages</li>
+  <li>Historique stocké localement de manière sécurisée</li>
+  <li>Échange de clés sécurisé en local, sans Internet requis</li>
+  <li>Option de destruction automatique des messages sensibles</li>
+  </ul>
+  <p><strong>Stack technique :</strong></p>
+  <ul>
+  <li>Electron, Node.js, crypto-js</li>
+  <li>Interface minimaliste et responsive</li>
+  <li>Mode sandbox pour tests hors production</li>
+  </ul>
+  </div>
+</div>
 
-    <footer class="footer">
-        <p>&copy; Colin VERRIERE, 2025</p>
-      </footer>
+<!-- Modale AuthAudit -->
 
-    <!-- SCRIPTS -->
+<div class="modal-overlay" id="modal-authaudit">
+  <div class="modal-content">
+  <span class="close-modal-btn">×</span>
+  <h4>AuthAudit –<br/> Outil d’audit de connexions</h4>
+  <p><strong>AuthAudit</strong> est un outil de sécurité offensive permettant de simuler des attaques par dictionnaire sur les services tels que <strong>FTP</strong>, <strong>SSH</strong> ou <strong>RDP</strong>. Il a été développé dans le cadre d’exercices d’audit interne et de sensibilisation à la sécurité des connexions réseau.</p>
+  <p>Le programme permet de lancer des attaques en local, analyser les réponses des services, générer un rapport d’audit, et simuler des comportements suspects détectables par un SIEM.</p>
+  <p><strong>Fonctionnalités clés :</strong></p>
+  <ul>
+  <li>Détection des ports ouverts et services exposés</li>
+  <li>Attaques personnalisables par dictionnaire</li>
+  <li>Génération automatique de rapports HTML</li>
+  <li>Comportement configurable pour simulation de scénarios d’attaque</li>
+  </ul>
+  <p><strong>Stack technique :</strong></p>
+  <ul>
+  <li>Python, Flask, Requests</li>
+  <li>Compatibilité Linux (Kali, Debian, Ubuntu)</li>
+  <li>Interface web minimale pour déclenchement et suivi des attaques</li>
+  </ul>
+  </div>
+</div>
+</section>
+<!-- Bouton toggle terminal -->
+<button id="toggle-terminal"> Jouer</button>
+<!-- Terminal interactif -->
+<div id="terminal-container" style="display:none;">
+<div id="terminal-output"></div>
+<div id="terminal-input">
+<span class="prompt">&gt;</span>
+<input autocomplete="off" autofocus="" id="terminal-command" type="text"/>
+</div>
+</div>
+<script>
+  // 1) Récupération des éléments
+  const toggleBtn = document.getElementById("toggle-terminal");
+  const terminal  = document.getElementById("terminal-container");
+  const output    = document.getElementById("terminal-output");
+  const input     = document.getElementById("terminal-command");
+
+  // 2) Définition des commandes jeux
+  const commands = {
+    pong: () => startPong(),
+    "space-invader": () => startSpaceInvader(),
+    clear: () => { output.innerHTML = ""; },
+  };
+
+  // 3) Fonction d’affichage dans le terminal
+  function print(text) {
+    const pre = document.createElement("pre");
+    pre.textContent = text;
+    output.appendChild(pre);
+    output.scrollTop = output.scrollHeight;
+  }
+
+  // 4) Toggle terminal
+  toggleBtn.addEventListener("click", () => {
+    const isHidden = terminal.style.display === "none";
+    terminal.style.display = isHidden ? "block" : "none";
+    if (isHidden) {
+      print("> Pong or Space-Invader ?");
+      input.focus();
+    }
+  });
+
+  // 5) Gestion de la saisie
+  input.addEventListener("keydown", e => {
+    if (e.key === "Enter") {
+      const cmd = input.value.trim().toLowerCase();
+      print("> " + cmd);
+      input.value = "";
+      if (commands[cmd]) {
+        commands[cmd]();
+      } else {
+        print(`Unknown command: ${cmd}`);
+      }
+    }
+  });
+
+  // 6) Implémentation minimaliste de Pong
+  function startPong() {
+    terminal.querySelector("#terminal-output").innerHTML = "";
+    terminal.querySelector("#terminal-output").appendChild(createCanvas("pongCanvas"));
+    const c = document.getElementById("pongCanvas");
+    const ctx = c.getContext("2d");
+    c.width = 400; c.height = 300;
+    let ball = { x:200, y:150, vx:2, vy:2, r:5 };
+    let paddle = { x:180, w:40, h:6 };
+    function draw() {
+      ctx.clearRect(0,0,400,300);
+      // balle
+      ctx.beginPath();
+      ctx.arc(ball.x, ball.y, ball.r, 0, Math.PI*2);
+      ctx.fill();
+      // raquette
+      ctx.fillRect(paddle.x, 290, paddle.w, paddle.h);
+    }
+    function update() {
+      ball.x += ball.vx; ball.y += ball.vy;
+      if (ball.x<ball.r||ball.x>400-ball.r) ball.vx*=-1;
+      if (ball.y<ball.r) ball.vy*=-1;
+      // rebond raquette
+      if (ball.y>290-ball.r && ball.x>paddle.x && ball.x<paddle.x+paddle.w) {
+        ball.vy*=-1;
+      }
+      // reset si perd
+      if (ball.y>300) {
+        ball = { x:200, y:150, vx:2, vy:2, r:5 };
+      }
+    }
+    // contrôle souris
+    c.addEventListener("mousemove", e => {
+      const rect = c.getBoundingClientRect();
+      paddle.x = e.clientX - rect.left - paddle.w/2;
+      if (paddle.x<0) paddle.x=0;
+      if (paddle.x>400-paddle.w) paddle.x=400-paddle.w;
+    });
+    // boucle de jeu
+    function loop() {
+      update(); draw();
+      requestAnimationFrame(loop);
+    }
+    loop();
+  }
+
+  // 7) Implémentation minimaliste de Space Invader
+  function startSpaceInvader() {
+    terminal.querySelector("#terminal-output").innerHTML = "";
+    terminal.querySelector("#terminal-output").appendChild(createCanvas("spaceCanvas"));
+    const c = document.getElementById("spaceCanvas");
+    const ctx = c.getContext("2d");
+    c.width = 400; c.height = 300;
+    // joueur
+    let player = { x:180, w:40, h:10 };
+    let bullets = [];
+    let invaders = [];
+    for (let i=0;i<5;i++) 
+      for (let j=0;j<3;j++)
+        invaders.push({ x:50+i*70, y:30+j*40, w:30, h:20, dir:1 });
+    function draw() {
+      ctx.clearRect(0,0,400,300);
+      // joueur
+      ctx.fillRect(player.x, 280, player.w, player.h);
+      // balles
+      bullets.forEach(b=>ctx.fillRect(b.x,b.y,2,6));
+      // envahisseurs
+      invaders.forEach(inv=>{
+        ctx.fillRect(inv.x, inv.y, inv.w, inv.h);
+      });
+    }
+    function update() {
+      // bouge envahisseurs
+      let shouldDescend=false;
+      invaders.forEach(inv=>{
+        inv.x += inv.dir;
+        if (inv.x<0||inv.x>400-inv.w) shouldDescend=true;
+      });
+      if (shouldDescend) invaders.forEach(inv=>{
+        inv.dir*=-1; inv.y+=10;
+      });
+      // balles
+      bullets.forEach((b,i)=> {
+        b.y-=4;
+        // collision
+        invaders.forEach((inv,j)=>{
+          if (b.x>inv.x&&b.x<inv.x+inv.w && b.y>inv.y && b.y<inv.y+inv.h) {
+            bullets.splice(i,1);
+            invaders.splice(j,1);
+          }
+        });
+        if (b.y<0) bullets.splice(i,1);
+      });
+    }
+    // contrôles clavier
+    document.addEventListener("keydown", e=>{
+      if (e.key==="ArrowLeft") player.x-=10;
+      if (e.key==="ArrowRight") player.x+=10;
+      if (e.key===" ") bullets.push({ x: player.x+player.w/2, y:280 });
+      if (player.x<0) player.x=0;
+      if (player.x>400-player.w) player.x=400-player.w;
+    });
+    function loop() {
+      update(); draw();
+      requestAnimationFrame(loop);
+    }
+    loop();
+  }
+
+  // 8) Helper pour créer un canvas et le wrapper
+  function createCanvas(id) {
+    const wrapper = document.createElement("div");
+    wrapper.style.textAlign = "center";
+    const canvas = document.createElement("canvas");
+    canvas.id = id;
+    wrapper.appendChild(canvas);
+    return wrapper;
+  }
+</script>
+<footer class="footer">
+<p>© Colin VERRIERE, 2025</p>
+</footer>
+   <!-- Bibliothèques tierces -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="./assets/js/sweet-scroll.min.js"></script>
   <script src="./assets/js/google-analytics.js"></script>
   <script src="./assets/js/main.js"></script>
 
+  <!-- Terminal interactif -->
   <script>
-    // Menu burger toggle
-    function toggleMenu() {
-      document.getElementById("mainNav").classList.toggle("active");
-    }
+    const commands = {
+      help: `Available commands:\n- whoami\n- skills\n- projects\n- contact\n- download_cv\n- clear\n- help`,
+      whoami: `Colin VERRIERE – Développeur passionné (Python, JS, cybersécurité, cloud, automation)`,
+      skills: `Langages : Python, JS, SQL\nFrameworks : React, Vue, Flask\nOutils : Docker, Git, Linux, Jira`,
+      projects: `Stay&Fly`,
+      contact: `colin.verriere@gmx.fr\n LinkedIn: linkedin.com/in/colinverriere`,
+      download_cv: `Téléchargement en cours...\n👉 CV PDF : ./pdf/CV_Colin_VERRIERE.pdf`,
+      clear: "__clear__",
+    };
 
-    // Thème
-    function toggleDropdown() {
-      const dropdown = document.getElementById("themeDropdown");
-      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-    }
+    const output    = document.getElementById("terminal-output");
+    const input     = document.getElementById("terminal-command");
+    const toggleBtn = document.getElementById("toggle-terminal");
+    const terminal  = document.getElementById("terminal-container");
 
-    function setTheme(mode) {
-      localStorage.setItem("theme", mode);
-      applyTheme();
-      document.getElementById("themeDropdown").style.display = "none";
-    }
+    toggleBtn.addEventListener("click", () => {
+      terminal.style.display = terminal.style.display === "none" ? "block" : "none";
+    });
 
-    function applyTheme() {
-      const mode = localStorage.getItem("theme") || "auto";
-      const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      document.documentElement.setAttribute("data-theme", mode === "dark" ? "dark" : mode === "light" ? "light" : (isDark ? "dark" : "light"));
+    function print(text) {
+      const pre = document.createElement("pre");
+      pre.textContent = text;
+      output.appendChild(pre);
+      output.scrollTop = output.scrollHeight;
     }
+    // juste après function print(…);
 
-    document.addEventListener("DOMContentLoaded", () => {
-      applyTheme();
-      document.addEventListener("click", (e) => {
-        const dropdown = document.getElementById("themeDropdown");
-        const toggleBtn = document.querySelector(".theme-toggle button");
-        if (!dropdown.contains(e.target) && !toggleBtn.contains(e.target)) {
-          dropdown.style.display = "none";
+    toggleBtn.addEventListener("click", () => {
+  const isHidden = terminal.style.display === "none";
+  terminal.style.display = isHidden ? "block" : "none";
+
+  if (isHidden) {
+    // on vient juste d'ouvrir : afficher help
+    print('> help');
+    print(commands.help);
+  }
+});
+
+    input.addEventListener("keydown", e => {
+      if (e.key === "Enter") {
+        const cmd = input.value.trim();
+        print(`> ${cmd}`);
+        if (commands[cmd]) {
+          if (commands[cmd] === "__clear__") output.innerHTML = "";
+          else print(commands[cmd]);
+        } else {
+          print(`Unknown command: ${cmd}\nType 'help' to see available commands.`);
         }
-      });
+        input.value = "";
+      }
     });
   </script>
 
-<script>
-    function toggleTheme() {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      let newTheme;
-  
-      if (currentTheme === 'dark') {
-        newTheme = 'light';
-      } else {
-        newTheme = 'dark';
-      }
-  
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
+  <!-- Menu burger (mobile) -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("mainNav").classList.toggle("show");
     }
-  
-    // Appliquer le thème sauvegardé au chargement
-    window.addEventListener('DOMContentLoaded', () => {
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-      }
+    document.querySelectorAll('.main-nav a').forEach(link =>
+      link.addEventListener('click', () => document.getElementById("mainNav").classList.remove("show"))
+    );
+  </script>
+
+  <!-- Toggle Light/Dark avec animation icône -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn  = document.querySelector('.theme-toggle');
+      const icon = btn.querySelector('.icon');
+
+      const refreshIcon = () => {
+        const cur = document.documentElement.getAttribute('data-theme');
+        icon.textContent = cur === 'dark' ? '☀️' : '🌙';
+      };
+
+      btn.addEventListener('click', () => {
+        // lance l'anim
+        btn.classList.add('animate-icon');
+        // change thème + icône
+        const cur  = document.documentElement.getAttribute('data-theme');
+        const next = cur === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        icon.textContent = next === 'dark' ? '☀️' : '🌙';
+        // retire la classe après anim
+        setTimeout(() => btn.classList.remove('animate-icon'), 600);
+      });
+
+      refreshIcon();
     });
   </script>
 
-<script>
+  <!-- TypeWriter (About section) -->
+  <script>
     class TypeWriter {
       constructor(txtElement, words, wait = 3000) {
         this.txtElement = txtElement;
-        this.words = words;
-        this.txt = '';
-        this.wordIndex = 0;
-        this.wait = parseInt(wait, 10);
-        this.type();
+        this.words      = words;
+        this.txt        = '';
+        this.wordIndex  = 0;
+        this.wait       = parseInt(wait, 10);
         this.isDeleting = false;
+        this.type();
       }
-  
       type() {
-        const current = this.wordIndex % this.words.length;
-        const fullTxt = this.words[current];
-  
-        if (this.isDeleting) {
-          this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-          this.txt = fullTxt.substring(0, this.txt.length + 1);
-        }
-  
+        const cur = this.wordIndex % this.words.length;
+        const fullTxt = this.words[cur];
+        this.txt = this.isDeleting
+          ? fullTxt.substring(0, this.txt.length - 1)
+          : fullTxt.substring(0, this.txt.length + 1);
         this.txtElement.innerHTML = this.txt;
-  
-        let typeSpeed = 150;
-  
-        if (this.isDeleting) {
-          typeSpeed /= 2;
-        }
-  
+        let speed = this.isDeleting ? 75 : 150;
         if (!this.isDeleting && this.txt === fullTxt) {
-          typeSpeed = this.wait;
+          speed = this.wait;
           this.isDeleting = true;
         } else if (this.isDeleting && this.txt === '') {
           this.isDeleting = false;
           this.wordIndex++;
-          typeSpeed = 500;
+          speed = 500;
         }
-  
-        setTimeout(() => this.type(), typeSpeed);
+        setTimeout(() => this.type(), speed);
       }
     }
-  
-    document.addEventListener('DOMContentLoaded', init);
-  
-    function init() {
-      const txtElement = document.querySelector('.txt-type');
-      const words = JSON.parse(txtElement.getAttribute('data-words'));
-      const wait = txtElement.getAttribute('data-wait');
-      new TypeWriter(txtElement, words, wait);
-    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const el = document.querySelector('.txt-type');
+      new TypeWriter(el, JSON.parse(el.getAttribute('data-words')), el.getAttribute('data-wait'));
+    });
   </script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const openModalBtns = document.querySelectorAll('.open-modal-btn');
-      const modal = document.getElementById('modal');
-      const closeModalBtn = document.querySelector('.close-modal-btn');
-  
-      openModalBtns.forEach(btn => {
-        btn.addEventListener('click', function (e) {
-          e.preventDefault();
-          modal.style.display = 'flex';
-        });
-      });
-  
-      closeModalBtn.addEventListener('click', function () {
-        modal.style.display = 'none';
-      });
-  
-      window.addEventListener('click', function (e) {
-        if (e.target === modal) {
-          modal.style.display = 'none';
-        }
-      });
+  <!-- Modales open/close -->
+  <script>
+    document.querySelectorAll('.open-modal-btn').forEach(btn =>
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        const m = document.getElementById(btn.getAttribute('href').slice(1));
+        m && (m.style.display = 'flex');
+      })
+    );
+    document.querySelectorAll('.close-modal-btn').forEach(btn =>
+      btn.addEventListener('click', () =>
+        btn.closest('.modal-overlay').style.display = 'none'
+      )
+    );
+    window.addEventListener('click', e => {
+      if (e.target.classList.contains('modal-overlay'))
+        e.target.style.display = 'none';
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape')
+        document.querySelectorAll('.modal-overlay')
+                .forEach(m => m.style.display = 'none');
     });
   </script>
+
+  <!-- CV badge follow mouse -->
   <script>
-    function toggleMenu() {
-      const nav = document.querySelector('.main-nav');
-      nav.classList.toggle('show');
-    }
-  
-    // Optionnel : refermer le menu après clic sur un lien (UX mobile)
-    document.querySelectorAll('.main-nav a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.querySelector('.main-nav').classList.remove('show');
-      });
+    const badge  = document.getElementById("cv-floating-badge");
+    let tx = window.innerWidth/2, ty = window.innerHeight/2;
+    let cx = tx, cy = ty;
+    document.addEventListener("mousemove", e => {
+      tx = e.clientX + 20; ty = e.clientY + 20;
     });
+    (function anim() {
+      cx += (tx-cx)*0.05; cy += (ty-cy)*0.05;
+      badge.style.transform = `translate(${cx}px, ${cy}px)`;
+      requestAnimationFrame(anim);
+    })();
   </script>
 </body>
-
 </html>

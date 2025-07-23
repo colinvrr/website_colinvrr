@@ -5,6 +5,7 @@
   --bg-color: #ffffff;
   --text-color: #000000;
 }
+
 [data-theme="dark"] {
   --bg-color: #181818;
   --text-color: #f0f0f0;
@@ -46,6 +47,7 @@ body {
   backdrop-filter: blur(10px);
   transition: background-color 0.3s;
 }
+
 [data-theme="dark"] .nav, [data-theme="dark"] .topbar {
   background-color: rgba(24, 24, 24, 0.8);
 }
@@ -69,6 +71,7 @@ body {
   background-color: rgba(0, 0, 0, 0.1);
   color: black;
 }
+
 [data-theme="dark"] .nav-links a:hover,
 [data-theme="dark"] .nav-links a.active {
   background-color: rgba(255, 255, 255, 0.1);
@@ -102,16 +105,19 @@ body {
 @media (max-width: 768px) {
   .burger {
     display: block;
-  }
-  .nav-links {
-    display: none;
+}
+
+.nav-links {
+  display: none;
     flex-direction: column;
     width: 100%;
     margin-top: 1rem;
-  }
-  .nav-links.active {
-    display: flex;
-  }
+}
+
+.nav-links.active {
+  display: flex;
+}
+
 }
 
 /* ============================= */
@@ -134,6 +140,7 @@ body {
   transition: transform 0.3s ease;
   break-inside: avoid;
 }
+
 .project-card:hover {
   transform: translateY(-5px);
 }
@@ -160,6 +167,7 @@ body {
   transition: all 0.3s ease;
   font-weight: bold;
 }
+
 .project-card .btn:hover {
   background-color: #007acc;
   color: white;
@@ -172,7 +180,8 @@ body {
 @keyframes blink {
   50% {
     opacity: 0;
-  }
+}
+
 }
 
 /* ===== HEADER PRINCIPAL ===== */
@@ -215,7 +224,8 @@ body {
 @media only screen and (min-width: 550px) {
   .header .site-title {
     font-size: 100px;
-  }
+}
+
 }
 
 .header .site-description {
@@ -227,7 +237,8 @@ body {
 @media only screen and (min-width: 550px) {
   .header .site-description {
     font-size: 40px;
-  }
+}
+
 }
 
 .header-links {
@@ -244,7 +255,8 @@ body {
 @media only screen and (min-width: 550px) {
   .header-links .link {
     font-size: 20px;
-  }
+}
+
 }
 
 .header-icons {
@@ -290,7 +302,8 @@ body {
       width: 35px;
       height: 35px;
       font-size: 35px
-  }
+}
+
 }
 
 .down {
@@ -314,7 +327,7 @@ body {
   width: 100px;
   height: 100px;
   fill: #fff;
-  -webkit-animation: pulse 1.3s infinite;
+  -webkit-animation: pulse 2.5s infinite;
   animation: pulse 1.3s infinite
 }
 
@@ -328,7 +341,7 @@ body {
 /* Animation de pulsation */
 @keyframes pulse {
   0% { transform: translate(-50%, -50%) scale(1); }
-  50% { transform: translate(-50%, -50%) scale(1.1); }
+  50% { transform: translate(-50%, -50%) scale(1.05); }
   100% { transform: translate(-50%, -50%) scale(1); }
 }
 
@@ -343,7 +356,8 @@ body {
 @media only screen and (min-width: 550px) {
   #about {
     width: 80%;
-  }
+}
+
 }
 
 .user {
@@ -363,7 +377,8 @@ body {
   .user {
     flex-wrap: nowrap;
     font-size: 75px;
-  }
+}
+
 }
 
 .user-details {
@@ -416,7 +431,8 @@ body {
 @media only screen and (min-width: 550px) {
   #projects {
     width: 80%;
-  }
+}
+
 }
 
 .projects-grid {
@@ -429,13 +445,15 @@ body {
 @media (max-width: 992px) {
   .projects-grid {
     column-count: 2;
-  }
+}
+
 }
 
 @media (max-width: 600px) {
   .projects-grid {
     column-count: 1;
-  }
+}
+
 }
 
 /* Carte Projet */
@@ -448,15 +466,6 @@ body {
   border-radius: 0.75rem;
   transition: transform 0.3s ease;
   break-inside: avoid;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-}
-
-.project-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
 }
 
 .project-card p {
@@ -484,11 +493,6 @@ body {
   border-radius: 0.25rem;
   transition: all 0.3s ease;
   font-weight: bold;
-}
-
-.project-card .btn:hover {
-  background-color: #007acc;
-  color: white;
 }
 
 /* ===== SECTION TECH SKILLS ===== */
@@ -627,7 +631,7 @@ body {
 
 /* Effet au hover : redresse la carte et agrandit */
 .flip-card:hover {
-  transform: rotate(0deg) scale(1.05);
+  transform: rotate(0deg);
   z-index: 10;
 }
 
@@ -677,27 +681,28 @@ body {
     align-items: center;
     gap: 1rem;
     padding: 1rem;
-  }
+}
 
-  .flip-card {
-    width: 90vw;
+.flip-card {
+  width: 90vw;
     height: auto;
     transform: rotate(0deg) !important;
     margin-top: 0 !important;
-  }
+}
 
-  .flip-card-front img,
+.flip-card-front img,
   .flip-card-back img {
-    width: 100%;
+  width: 100%;
     height: auto;
     max-height: 300px;
     object-fit: cover;
     border-radius: 12px;
-  }
+}
 
-  .flip-card-inner {
-    height: auto;
-  }
+.flip-card-inner {
+  height: auto;
+}
+
 }
 
 /* Sceau de date sur la face arrière */
@@ -713,7 +718,6 @@ body {
   padding: 0.4rem 0.8rem;
   backdrop-filter: blur(2px);
 }
-
 
 /* ===== FLOATING BLOBS (fond animé) ===== */
 
@@ -764,13 +768,16 @@ body {
 @keyframes blobMove {
   0% {
     transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(-40px, 30px) scale(1.1);
-  }
-  100% {
-    transform: translate(30px, -20px) scale(0.9);
-  }
+}
+
+50% {
+  transform: translate(-40px, 30px) scale(1.1);
+}
+
+100% {
+  transform: translate(30px, -20px) scale(0.9);
+}
+
 }
 
 /* ===== GRILLE DE PROJETS TYPE "PINTEREST" ===== */
@@ -787,13 +794,8 @@ body {
 @media (max-width: 992px) {
   .projects-grid {
     column-count: 2;
-  }
 }
 
-@media (max-width: 600px) {
-  .projects-grid {
-    column-count: 1;
-  }
 }
 
 /* Cartes individuelles */
@@ -864,7 +866,6 @@ body {
   padding: 2rem;
   position: relative;
 }
-
 
 /* PETIT TEXTE (DATE OU AUTRE) AU MILIEU */
 .date-stamp {
@@ -957,9 +958,11 @@ body {
 .traffic-buttons .red {
   background-color: #ff5f56;
 }
+
 .traffic-buttons .yellow {
   background-color: #ffbd2e;
 }
+
 .traffic-buttons .green {
   background-color: #27c93f;
 }
@@ -1068,8 +1071,13 @@ body {
 
 /* Animation du curseur */
 @keyframes blink {
-  0%, 50%, 100% { opacity: 1; }
-  25%, 75% { opacity: 0; }
+  0%, 50%, 100% { opacity: 1;
+}
+
+25%, 75% {
+  opacity: 0;
+}
+
 }
 
 /* ===== DARK MODE : Texte clair pour les blocs importants ===== */
@@ -1178,42 +1186,44 @@ body {
 @media (max-width: 549px) {
   .header .site-title {
     font-size: 2rem;
-  }
+}
 
-  .header .site-description {
-    font-size: 1.2rem;
-  }
+.header .site-description {
+  font-size: 1.2rem;
+}
 
-  .user {
-    flex-direction: column;
+.user {
+  flex-direction: column;
     font-size: 40px;
-  }
+}
 
-  .tech-card {
-    max-width: 100%;
+.tech-card {
+  max-width: 100%;
     padding: 1rem;
-  }
+}
 
-  .project-card {
+.project-card {
+  padding: 1rem;
+}
+
+.photo-gallery {
+  gap: 1rem;
     padding: 1rem;
-  }
+}
 
-  .photo-gallery {
-    gap: 1rem;
-    padding: 1rem;
-  }
-
-  .flip-card {
-    width: 100%;
+.flip-card {
+  width: 100%;
     height: auto;
-  }
+}
+
 }
 
 @media (max-width: 768px) {
   .tech-card {
     max-width: 100%;
     flex: 1 1 100%;
-  }
+}
+
 }
 
 .burger {
@@ -1225,58 +1235,48 @@ body {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .burger {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 1rem;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
 }#particles-js {
   position: relative;
 }
 
 .theme-toggle {
-  position: absolute; /* Cela permet de positionner précisément le bouton */
+  position: absolute;
   top: 10px;
-  left: 50%; /* Centre horizontalement */
-  transform: translateX(-50%); /* Centre parfaitement le bouton */
-}
-
-.theme-toggle button {
+  left: 50%;
+  transform: translateX(-50%);
   background: none;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
   color: var(--text-color);
-  padding: 0.3em;
+  padding: 0.4em;
   border-radius: 50%;
-  transition: transform 0.3s ease-out;
-  outline: none; /* Supprimer l'encadrement par défaut */
-  box-shadow: none; /* Enlever toute ombre par défaut */
-  appearance: none; /* Supprimer l'apparence par défaut du système */
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.theme-toggle button:active, .theme-toggle button:focus {
-  animation: rotate 0.5s ease-out;
-  outline: none; /* Pour assurer qu'aucun encadrement ne soit présent */
+.theme-toggle .icon {
+  display: inline-block;
+  transition: transform 0.6s ease, opacity 0.3s ease;
+}
+
+.theme-toggle.animate .icon {
+  opacity: 1;
+}
+
+.theme-toggle:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(100, 100, 255, 0.4);
 }
 
 @keyframes rotate {
   from {
     transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+to {
+  transform: rotate(360deg);
+}
+
 }
 
 
@@ -1401,3 +1401,163 @@ button:focus {
   color: #333; /* Une couleur pour le texte gras */
   font-weight: bold; /* Augmentation de gras si souhaité */
 }
+
+#splash-screen {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease;
+  color: #33ff33;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.splash-inner .loader-text {
+  font-size: 1.5rem;
+  animation: blinkText 1s steps(1) infinite;
+}
+
+@keyframes blinkText {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.lang-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: 1px solid white;
+  padding: 0.4em 0.7em;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  z-index: 10000;
+}
+#cv-floating-badge {
+  position: fixed;
+  top: 350px;
+  right: 40px;
+  width: 110px;
+  height: auto;
+  z-index: 999;
+  animation: floatUpDown 4s ease-in-out infinite;
+}
+
+#cv-floating-badge img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  opacity: 0.95;
+  transition: transform 0.3s ease;
+}
+
+#cv-floating-badge img:hover {
+  transform: scale(1.08);
+}
+
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+#terminal-container {
+  background: #1a1a1a;
+  color: #00ff88;
+  font-family: monospace;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 700px;
+  margin: 60px auto;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+#terminal-output {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+#terminal-input {
+  display: flex;
+  align-items: center;
+}
+
+.prompt {
+  margin-right: 10px;
+}
+
+#terminal-command {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #00ff88;
+  outline: none;
+  font-size: 1rem;
+}
+
+pre {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+#toggle-terminal {
+  display: block;
+  margin: 40px auto 20px auto;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: var(--primary-color, #222);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#toggle-terminal:hover {
+  background-color: var(--accent-color, #444);
+}
+
+/* === supprimer le contour jaune au focus sur les boutons === */
+button:focus,
+.theme-toggle:focus,
+.btn:focus,
+a:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* animation spin + pop */
+@keyframes icon-spin-pop {
+  0%   { transform: rotate(0deg)   scale(1);   opacity: 1; }
+  50%  { transform: rotate(180deg) scale(1.3); opacity: 0.5; }
+  100% { transform: rotate(360deg) scale(1);   opacity: 1; }
+}
+
+/* classe qu’on ajoutera depuis JS */
+.theme-toggle.animate-icon .icon {
+  animation: icon-spin-pop 0.6s ease-in-out;
+}
+
+.btn-morph {
+  padding: .8em 1.6em;
+  font-family: monospace;
+  background: #07c;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  transition: border-radius .3s ease;
+  cursor: pointer;
+}
+.btn-morph:hover {
+  border-radius: 6px;
+}
+
